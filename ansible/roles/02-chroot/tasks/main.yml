@@ -31,6 +31,36 @@
   apt:
     name: zfs-initramfs
     state: present
+- name: install configuration utils
+   apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    -nmcli
+    -wireless-tools
+    -openssh-server 
+    -lxc 
+    -lxd 
+    -ifupdown 
+    -lxctl 
+    -lxc-templates 
+    -python3-dev 
+    -seccomp 
+    -python-gnutls 
+    -gnutls-bin 
+    -virt-manager 
+    -virt-top 
+    -virtinst 
+    -libvirt-daemon* 
+    -libvirt-bin 
+    -libvirt-clients 
+    -gparted 
+    -ssh-askpass 
+    -git 
+    -guestfsd 
+    -libguestfs-zfs 
+    -zfs-fuse
+    -zfs-initramfs
 - name: install grub-pc
   apt:
     name: grub-pc
